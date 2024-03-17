@@ -2,9 +2,9 @@ package SocketDump
 
 type SOCKET struct {
 	Protocol      uint8
-	LocalAddress  [16]uint8
+	LocalAddress  [4]uint8
 	LocalPort     uint16
-	RemoteAddress [16]uint8
+	RemoteAddress [4]uint8
 	RemotePort    uint16
 }
 
