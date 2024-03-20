@@ -49,6 +49,7 @@ func (handle *Handle) Process() error {
 				continue
 			}
 			handle.dict[socket], _ = Process.Name()
+			// fmt.Println(socket.Protocol)
 			// fmt.Println(socket.LocalAddress)
 			// fmt.Println(socket.LocalPort)
 			// fmt.Println(socket.RemoteAddress)
@@ -72,4 +73,9 @@ func Reverse(address [16]uint8) (ret [4]uint8) {
 		ret[i] = address[3-i]
 	}
 	return ret
+}
+
+func (handle *Handle) GetProcessName(socket SOCKET) (name string, ok bool) {
+	name, ok = handle.dict[socket]
+	return name, ok
 }
