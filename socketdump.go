@@ -79,3 +79,7 @@ func (handle *Handle) GetProcessName(socket SOCKET) (name string, ok bool) {
 	name, ok = handle.dict[socket]
 	return name, ok
 }
+
+func (handle *Handle) GetDict() map[SOCKET]string {
+	return handle.dict
+}
