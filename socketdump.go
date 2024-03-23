@@ -55,15 +55,15 @@ func (handle *Handle) Process() error {
 			// fmt.Println(socket.RemoteAddress)
 			// fmt.Println(socket.RemotePort)
 
-		case divert.EventSocketClose:
-			socket := SOCKET{
-				Protocol:      address.Socket().Protocol,
-				LocalAddress:  Reverse(address.Socket().LocalAddress),
-				LocalPort:     address.Socket().LocalPort,
-				RemoteAddress: Reverse(address.Socket().RemoteAddress),
-				RemotePort:    address.Socket().RemotePort,
-			}
-			delete(handle.dict, socket)
+			// case divert.EventSocketClose:
+			// 	socket := SOCKET{
+			// 		Protocol:      address.Socket().Protocol,
+			// 		LocalAddress:  Reverse(address.Socket().LocalAddress),
+			// 		LocalPort:     address.Socket().LocalPort,
+			// 		RemoteAddress: Reverse(address.Socket().RemoteAddress),
+			// 		RemotePort:    address.Socket().RemotePort,
+			// 	}
+			// 	delete(handle.dict, socket)
 		}
 	}
 }
